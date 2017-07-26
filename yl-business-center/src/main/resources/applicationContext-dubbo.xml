@@ -4,13 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- Dubbo配置 -->
-    <dubbo:application name="bt-business-center" logger="${dubbo.application.logger}"/>
+    <dubbo:application name="yl-business-center" logger="${dubbo.application.logger}"/>
     <!-- 通过 广播通知所有人-->
     <dubbo:registry address="${registry.address}" protocol="${registry.protocol}" />
     <dubbo:protocol name="${protocol.name}" port="${protocol.port}" threads="500"/>
     <dubbo:provider filter="-exception"/>
 
-    <dubbo:service interface="com.yl.business.test.domain.TestDomain" version="1.0.0.0" ref="testDomain" validation="true" timeout="5000" retries="0"/>
+    <dubbo:service interface="com.yl.business.test.domain.TestDomain" version="1.0" ref="testDomain" validation="false" timeout="5000" retries="0"/>
 
     <!--<dubbo:reference id="mytest" interface="com.yl.business.test.domain.TestDomain" version="1.0.0.0" check="false"/>-->
 

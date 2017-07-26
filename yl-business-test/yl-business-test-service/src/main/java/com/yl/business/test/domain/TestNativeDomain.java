@@ -1,5 +1,6 @@
 package com.yl.business.test.domain;
 
+import com.yl.business.test.bo.UserBo;
 import com.yl.business.test.model.User;
 import com.yl.business.test.service.TestService;
 import org.springframework.stereotype.Service;
@@ -20,5 +21,14 @@ public class TestNativeDomain implements TestDomain{
         user.setName("Rose");
         user.setAge(21);
         Integer save = testService.save(user);
+    }
+
+    public UserBo get(Integer ID) {
+        User user = testService.get(ID);
+        UserBo userBo = new UserBo();
+        userBo.setAge(user.getAge());
+        userBo.setId(user.getId());
+        userBo.setName(user.getName());
+        return userBo;
     }
 }

@@ -13,6 +13,7 @@
         <module>yl-business-center</module>
         <module>yl-business-redis</module>
         <module>yl-business-test</module>
+        <module>../yl-business-interface</module>
     </modules>
 
 
